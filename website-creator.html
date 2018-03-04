@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>html() and val() Madlib</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function(){
+      
+      $('button').click(function(){
+        var age = $("#age").val()
+        var name = $("#name").val()
+        var color = $("#color").val()
+        var hobbies = $("#hobbies").val()
+        var subject = $("#subject").val()
+        
+        var heading = "Welcome to " + name + "'s website!";
+        var summary = "I, " + name + " am " + age + " years old. I love to " + hobbies + " during my free time. Also my favoite subject in school is " + subject + ". Thank You for reading this! If you want to find out mt favorite color? Then click on any of the text to find out!";
+        
+        $("button").click(function(){
+          $("h1").html(heading);
+          $("h2").html(summary);
+          
+          $("h1").click(function(){
+            $("h1").css("color", color);
+            });
+          $("h2").click(function(){
+            $("h2").css("color", color);
+            });
+        });
+        
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1></h1>
+  <h2></h2>
+  
+  Welcome to WEBSITE GENERATOR! Simply answer the following questions andyou will get your own... WEBSITE!<br>
+  What is your name? <input id="name"><br>
+  What is your age? <input id="age"><br>
+  What is your favorite Color? <input id="color"><br>
+  What are your favorite hobby? <input id="hobbies"><br>
+  What is your favorite subject? <input id="subject"><br>
+  Double click the button to generate your project!<br>
+  <button>Generate!</button>
+  
+  
+</body>
+</html>
